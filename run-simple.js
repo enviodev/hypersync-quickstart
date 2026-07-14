@@ -19,9 +19,10 @@ const event_signatures = [
 // Create topic0 hashes from event signatures
 const topic0_list = event_signatures.map((sig) => keccak256(toHex(sig)));
 
-// Initialize Hypersync client
-const client = HypersyncClient.new({
-  url: "http://eth.hypersync.xyz",
+// Initialize Hypersync client (API token required: https://docs.envio.dev/docs/HyperSync/api-tokens)
+const client = new HypersyncClient({
+  url: "https://eth.hypersync.xyz",
+  apiToken: process.env.ENVIO_API_TOKEN,
 });
 
 // Define query for Uniswap V3 events

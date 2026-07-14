@@ -7,9 +7,10 @@ import {
   Decoder,
 } from "@envio-dev/hypersync-client";
 
-// Initialize Hypersync client
-const client = HypersyncClient.new({
-  url: "http://eth.hypersync.xyz",
+// Initialize Hypersync client (API token required: https://docs.envio.dev/docs/HyperSync/api-tokens)
+const client = new HypersyncClient({
+  url: "https://eth.hypersync.xyz",
+  apiToken: process.env.ENVIO_API_TOKEN,
 });
 
 // Define ERC20 event signatures for keccak256 hashing

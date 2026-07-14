@@ -16,9 +16,10 @@ import figlet from "figlet";
 // HYPERSYNC CONFIGURATION
 //=============================================================================
 
-// Initialize Hypersync client
-const client = HypersyncClient.new({
-  url: "http://eth.hypersync.xyz",
+// Initialize Hypersync client (API token required: https://docs.envio.dev/docs/HyperSync/api-tokens)
+const client = new HypersyncClient({
+  url: "https://eth.hypersync.xyz",
+  apiToken: process.env.ENVIO_API_TOKEN,
 });
 
 // Define Uniswap V3 event signatures we want to track
