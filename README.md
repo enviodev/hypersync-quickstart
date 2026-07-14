@@ -1,11 +1,18 @@
 # Hypersync Quickstart
 
-Minimal example showing how to use Hypersync to stream blockchain events from Uniswap V3.
+Minimal examples showing how to use HyperSync to stream blockchain events from Uniswap V3.
 
 ## Prerequisites
 
 - Node.js
-- pnpm
+- pnpm (or npm)
+- An Envio API token ([get one here](https://docs.envio.dev/docs/HyperSync/api-tokens))
+
+API tokens have been required since 3 Nov 2025. Set yours before running:
+
+```bash
+export ENVIO_API_TOKEN="your-token-here"
+```
 
 ## How to run
 
@@ -13,11 +20,11 @@ Minimal example showing how to use Hypersync to stream blockchain events from Un
 # Install dependencies
 pnpm i
 
-# Run full version with UI
-node run.js
-
 # Run minimal version (recommended for beginners)
 node run-simple.js
+
+# Run full version with UI
+node run.js
 
 # Run version with interactive terminal dashboard
 node run-tui.js
@@ -29,18 +36,20 @@ node run-decoder.js
 node run-decoder-multi.js
 ```
 
-The script streams events directly from Ethereum mainnet and displays progress as it scans the blockchain.
+The scripts stream events from Ethereum mainnet (or Unichain for `run-decoder.js`) and display progress as they scan.
 
-> **Note:** To use other networks, change the URL in `client = HypersyncClient.new({url: "http://eth.hypersync.xyz"})`. See [documentation](https://docs.envio.dev/docs/HyperSync/overview) for supported networks.
+> **Note:** To use other networks, change the `url` passed to `new HypersyncClient({ url, apiToken })`. See [supported networks](https://docs.envio.dev/docs/HyperSync/hypersync-supported-networks).
 
 ## Example Files
 
 - `run.js` - Main example with UI for tracking Uniswap V3 events
 - `run-simple.js` - Simplified version for beginners
 - `run-tui.js` - Example with interactive terminal dashboard
-- `run-decoder.js` - Shows how to use Hypersync's decoder to parse Uniswap V3 swap events
+- `run-decoder.js` - Shows how to use HyperSync's decoder to parse Uniswap V3 swap events
 - `run-decoder-multi.js` - Demonstrates decoding multiple event types (ERC20 Transfer and Approval)
 
 ## Documentation
 
-For more information about Hypersync, visit the [official documentation](https://docs.envio.dev/docs/HyperSync/overview).
+- [HyperSync overview](https://docs.envio.dev/docs/HyperSync/overview)
+- [API tokens](https://docs.envio.dev/docs/HyperSync/api-tokens)
+- [Supported networks](https://docs.envio.dev/docs/HyperSync/hypersync-supported-networks)
